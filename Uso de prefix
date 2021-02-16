@@ -1,0 +1,55 @@
+Ahora, te enseñaré a poner un prefix a tu bot.
+
+Crea un archivo que se llame "config.json" y ahí introduce este código:
+
+{
+ "token": "tokenSecreto",
+ "prefix": "!"
+
+}
+
+En donde el prefix tienes toda la libertad para poner el que quieras y en tokenSecreto pon el token del bot.
+
+Ahora en el código principal tendrás que añadir en el apartado de los const:
+
+const config = require("./config.json");
+
+Y despúes debajo de este mismo deja un espacio y pon: 
+
+let prefix = config.prefix;
+
+También donde el token cambialo a:
+
+client.login(config.token);
+
+Ahora los mensajes serán así:
+
+if(message.content.startsWith(prefix + 'hola')) { 
+     message.channel.send(`Hola que tal?`);
+}
+
+Entonces todo esto quedaría algo así:
+
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const config = require("./config.json");
+
+let prefix = config.prefix;
+
+client.on("ready", () => {
+   console.log(`Estoy listo!`);
+});
+
+client.on("message", (message) => {
+  if(message.content.startsWith(prefix + 'ping')) {
+    message.channel.send(`pong`);
+
+  } else
+  if(message.content.startsWith(prefix + 'hola')) { 
+     message.channel.send(`Hola, ¿qué tal?`);
+
+  }
+
+});
+
+client.login(config.token);
