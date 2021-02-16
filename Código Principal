@@ -1,0 +1,67 @@
+En el Visual Studio Code, deberás añadir un archivo que se llame: index.js, main.js, bot.js, etc... (Tiene que llevar .js).
+
+Copia y pega esto en el código:
+
+const Discord = require("discord.js");
+const client = new Discord.Client();
+
+client.on('ready', () => {
+   console.log(`Estoy listo!`);
+});
+
+client.on('message', (message) => {
+  if(message.content.startsWith('Hola')) {
+    message.channel.send(`¡Hola!, ¿cómo estas?`);
+  }
+
+});
+
+client.login('TokenSecreto');
+
+En donde dice 'TokenSecreto' debe ir el token de tu bot, las '' no puedes borrarlas, solo reemplaza el mensaje de TokenSecreto por el token de tu bot.
+
+Si quieres añadir un estado personalizado a tu bot añade:
+
+client.on("ready", () => {
+   console.log(`Estoy listo!, 
+            conectado en ${client.guilds.cache.size} servidores y  ${client.users.cache.size} usuarios.`);
+
+   client.user.setPresence( {
+       activity: {
+           name: `discord.gg/qy6fceb`,
+           type: "WATCHING"
+       },
+       status: "online"
+    });
+
+});
+
+Entre las comas esas donde dice:
+name: `discord.gg/qy6fceb`,
+Tu puedes poner lo que quieras entre ese espacio.
+
+Entonces el código final quedaría así:
+
+const Discord = require("discord.js");
+const client = new Discord.Client();
+
+client.on('ready', () => {
+   console.log(`Estoy listo!`);
+});
+
+   client.user.setPresence( {
+       activity: {
+           name: `discord.gg/qy6fceb`,
+           type: "WATCHING"
+       },
+       status: "online"
+    });
+
+});
+
+client.on('message', (message) => {
+  if(message.content.startsWith('Hola')) {
+    message.channel.send(`¡Hola!, ¿cómo estas?`);
+  }
+
+});
