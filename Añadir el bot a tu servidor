@@ -1,0 +1,7 @@
+Una vez creado el bot, en esa pestaña tienes más opciones echa un vistazo si gustas. Ahora tienes un gran responsabilidad, proteger el token.
+
+El token es lo más importante de un bot, no se lo muestres a nadie. Si lo haces, esa persona podrá hacer lo que quiera con tu bot. Copia el token y guardalo, porque lo necesitarmeos después.
+
+Ahora ve de nuevo a la pantalla principal y donde dice "Client ID" copia ese número. Entonces ahora dírigete a https://discordapi.com/permissions.html
+
+Ahora presta atención, en el apartado de abajo, aparece Client ID, pega ese número de antes y arriba del todo marca la casilla "Administrador". Una vez hecho esto, abajo tendrás el enlace para invitar a tu bot.
